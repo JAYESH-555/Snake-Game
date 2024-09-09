@@ -1,0 +1,137 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  /* background-color: rgb(176, 242, 77); */
+  background-image: url(assets/snake-bg.jpg);
+  /* Scales the image to be contained within the viewport */
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+ 
+  padding: 20px;
+  
+  background-color: #000;
+  background-attachment: fixed;
+  
+  text-align: center;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  body {
+    background-size: 100% auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  body {
+    background-size: auto 100%;
+  }
+}
+
+.game-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  margin-top: -90px;
+  
+}
+
+
+.game-header h1 {
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #2F4F4F;
+}
+
+#game-arena {
+  width: 500px;
+  height: 500px;
+  background-color: #333;
+  position: relative;
+  border: 5px solid #666;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+#score-board {
+  font-size: x-large;
+  font-weight: bold;
+  color: black;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin: 10px 0;
+}
+
+.start-button {
+  background-color: orangered;
+  color: whitesmoke;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  cursor: pointer;
+  margin: 4px 0;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.food {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  border-radius: 50%;
+  animation: blink 1s infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.snake {
+  width: 20px;
+  height: 20px;
+  background-color: chartreuse;
+  position: absolute;
+  border-radius: 5px;
+}
+
+
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  50% {
+    transform: translateX(5px);
+  }
+
+  75% {
+    transform: translateX(-5px);
+  }
+
+  100% {
+    transform: translateX(5px);
+  }
+}
+
+.shake {
+  animation: shake 0.1s infinite;
+}
